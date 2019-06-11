@@ -1,0 +1,117 @@
+.form-container .wrapper h1,
+.form-container .wrapper h4{
+    color: white;
+}
+.form-container .wrapper a{
+    text-decoration: none;
+    color: white;
+}
+
+.form-container{
+      margin: 0;
+      padding: 25px 0;
+      height: 90vh; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center;
+}
+.wrapper{
+    padding: 55px 0;
+    font-family: sans-serif;
+    height: 80%;
+    overflow: hidden;
+    width: 500px;
+    display: flex;
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    background-image: linear-gradient(#8d0a15, #43161d);
+    border-radius: 10px;
+}
+.login{
+    transition: all 10s linear;
+    width: 500px;
+    position: absolute;
+    left: 0;
+    transition: 1s left;
+}
+.forgot{
+    width: 500px;
+    position: absolute;
+    right: -500px;
+    transition: 1s right;
+}
+
+.input-container{
+    position: relative;
+    margin-bottom: 25px;
+}
+.input-container .input-icon{
+    width: 15px;
+    top: 7px;
+    left: 30%;
+    position: absolute;
+}
+#username, #password{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    padding: 10px 0;
+    margin-left: 40px;
+    width: 40%;
+    color: white;
+    border-bottom: .2px solid  rgba(255, 255, 255, .3);
+}
+#username::placeholder, #password::placeholder{
+    padding-left: 5px;
+    font-size: 16px;
+}
+#username:focus::placeholder, #password:focus::placeholder{
+    color: transparent;
+}
+#username:focus, #password:focus{
+    border-bottom: 1px solid ;
+    animation: 2s opacityBorder;
+}
+
+@keyframes opacityBorder{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+#username:focus + img, #password:focus + img{
+    top: -8px;
+    transition: .5s top;
+}
+#username:not(:focus) + img, #password:not(:focus) + img{
+    top: 7px;
+    transition: .6s top;
+}
+
+.button-container{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0
+}
+.button-container a, .button-container input{
+    padding: 8px 25px;
+}
+.button-container input{
+    outline:none !important;
+    border-radius: 8px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid rgba(0, 0, 0, .2);
+    cursor: pointer;
+    box-shadow: 0px 3px 9px rgb(77, 25, 33);
+}
+
+@media screen and (max-width: 480px) {
+  .login, .forgot { 
+    width: 100%;
+  }
+}
