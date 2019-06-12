@@ -1,8 +1,8 @@
 .form-container .wrapper h1,
-.form-container .wrapper h4{
+.form-container .wrapper h5{
     color: white;
 }
-.form-container .wrapper a{
+.form-container .wrapper a, .wrapper p{
     text-decoration: none;
     color: white;
 }
@@ -18,7 +18,7 @@
 .wrapper{
     padding: 55px 0;
     font-family: sans-serif;
-    height: 80%;
+    height: 60%;
     overflow: hidden;
     width: 500px;
     display: flex;
@@ -26,7 +26,7 @@
     justify-content: center;
     text-align: center;
     position: relative;
-    background-image: linear-gradient(#8d0a15, #43161d);
+    background: url('/images/logo.png') 50% -5%/450px 145px no-repeat, linear-gradient(#8d0a15, #43161d);
     border-radius: 10px;
 }
 .login{
@@ -53,6 +53,7 @@
     left: 30%;
     position: absolute;
 }
+
 #username, #password{
     outline: none;
     border: none;
@@ -63,6 +64,7 @@
     color: white;
     border-bottom: .2px solid  rgba(255, 255, 255, .3);
 }
+
 #username::placeholder, #password::placeholder{
     padding-left: 5px;
     font-size: 16px;
@@ -92,7 +94,7 @@
     transition: .6s top;
 }
 
-.button-container{
+.login .button-container{
     display: flex;
     justify-content: space-around;
     margin: 20px 0
@@ -114,4 +116,55 @@
   .login, .forgot { 
     width: 100%;
   }
+}
+/* Css so logo can be seen when is device in landscape orientation*/
+@media screen and  (orientation: landscape) and (max-width: 890px) {
+  .wrapper{
+    height: 80%;
+    background-position: -250%  -5%;
+  }
+}
+@media screen and (min-width: 320px) and (max-width:320px) {
+    .wrapper{
+        background-position: 50% -15%
+    }
+ }
+
+/* Login page with token to enter */
+.forgot .token-input{
+    outline: none;
+    border: none;
+    background-color: transparent;
+    padding: 10px 0;
+    width: 30%;
+    color: white;
+    border-bottom: .2px solid  rgba(255, 255, 255, .3);
+}
+/* Hidden input spinner */
+.forgot .token-input[type=number]::-webkit-inner-spin-button,
+.forgot .token-input[type=number]::-webkit-outer-spin-button{
+    -webkit-appearance: none; 
+      margin: 0; 
+}
+
+.forgot .token-input:focus{
+    border-bottom: 1px solid ;
+    animation: 2s opacityBorder;
+}
+.forgot .button-container div{
+    display: flex;
+    justify-content: space-around;
+    margin: 20px 0;
+}
+.forgot .button-container div button,.forgot .button-container div a, .forgot .button-container .backup-token{
+    padding: 8px 25px;
+}
+.forgot .button-container div button, .forgot .button-container .backup-token{
+    outline:none !important;
+    border-radius: 8px;
+    background-color: transparent;
+    color: white;
+    border: 2px solid rgba(0, 0, 0, .2);
+    cursor: pointer;
+    box-shadow: 0px 3px 9px rgb(77, 25, 33);
 }

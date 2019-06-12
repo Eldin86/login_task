@@ -13,7 +13,7 @@
         <div class="wrapper">
         <div class="login" id="login">
            <h1>LOGIN</h1>
-           <h4>ENTER YOUR CREDIENTALS</h4>
+           <h5>ENTER YOUR CREDIENTALS</h5>
            <form>
                <div class="input-container">
                    <input type="text" placeholder="Username" id="username">
@@ -23,17 +23,31 @@
                    <input type="password" placeholder="Password" id="password">
                    <img class="input-icon password-icon" src="images/lock.svg" alt="Password icon">
                </div>
-               <!-- button is type button, please change it for your purposes -->
               <div class="button-container">
                    <a href="#">Cancel</a><input type="submit" value="Back"><input type="submit" value="Next">
               </div>
            </form>
-            <a href="#" class="show_forgot" id="show_forgot">Forgot password?</a>
+            <!-- In a element i added '#!' to prevent jumping when element is clicked-->   
+            <a href="#!" class="show_forgot" id="show_forgot">Forgot password?</a>
         </div>
         
         <div class="forgot" id="forgot">
-            <h2>Forgot page</h2>
-            <button class="back" id="back">Back</button>
+            <h1>LOGIN</h1>
+            <h5>WE SENT YOU A TEXT MESSAGE, <br> PLEASE ENTER THE TOKENS WE SENT.</h5>
+            <form>
+                <div class="input-container">
+                    <input type="number" class="token-input">
+                </div>
+                <div class="button-container">
+                     <p>As a last resort, you can use a backup token:</p>
+                     <button class="backup-token">Use Backup Token</button><br>
+                     <div>
+                         <a href="#">Cancel</a>
+                         <button class="back" id="back">Back</button>
+                         <button class="back" id="back">Next</button>
+                     </div>
+                </div>
+            </form>
         </div>
     </div>
     </div>
