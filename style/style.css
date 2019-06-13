@@ -147,12 +147,18 @@ body{
     color: white;
     border-bottom: .2px solid  rgba(255, 255, 255, .3);
 }
+
 /* Hidden input spinner */
 .forgot .token-input[type=number]::-webkit-inner-spin-button,
 .forgot .token-input[type=number]::-webkit-outer-spin-button{
     -webkit-appearance: none; 
       margin: 0; 
 }
+/* hide spinner for mozilla browsers */
+.forgot .token-input[type=number] {
+    -moz-appearance:textfield;
+}
+
 
 .forgot .token-input:focus{
     border-bottom: 1px solid ;
