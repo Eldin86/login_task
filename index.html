@@ -12,39 +12,38 @@
     <div class="form-container">
         <div class="wrapper">
         <div class="login" id="login">
-           <h1>LOGIN</h1>
            <h5>ENTER YOUR CREDIENTALS</h5>
            <form>
                <div class="input-container">
-                   <input type="text" placeholder="Username" id="username">
+                   <input type="text" placeholder="Username" id="username" autocomplete="off">
                    <img class="input-icon username-icon" src="images/user.svg" alt="Username icon">
                </div>
                <div class="input-container">
                    <input type="password" placeholder="Password" id="password">
                    <img class="input-icon password-icon" src="images/lock.svg" alt="Password icon">
                </div>
-              <div class="button-container">
-                   <a href="#">Cancel</a><input type="submit" value="Back"><input type="submit" value="Next">
-              </div>
+               <div class="button-container">
+                   <input type="button" value="Login" id="login_btn">
+               </div>
            </form>
             <!-- In a element i added '#!' to prevent jumping when element is clicked-->   
             <a href="#!" class="show_forgot" id="show_forgot">Forgot password?</a>
         </div>
         
         <div class="forgot" id="forgot">
-            <h1>LOGIN</h1>
             <h5>WE SENT YOU A TEXT MESSAGE, <br> PLEASE ENTER THE TOKENS WE SENT.</h5>
             <form>
                 <div class="input-container">
-                    <input type="number" class="token-input">
+                    <input type="number" class="token-input" id="token">
+                    <img class="input-icon password-icon" src="images/auth.svg" alt="Password icon">
                 </div>
                 <div class="button-container">
                      <p>As a last resort, you can use a backup token:</p>
-                     <button class="backup-token">Use Backup Token</button><br>
+                     <input type="button" class="backup-token" value="Use Backup Token"><br>
                      <div>
-                         <a href="#">Cancel</a>
-                         <button class="back" id="back">Back</button>
-                         <button class="back" id="back">Next</button>
+                         <a href="#!">Cancel</a>
+                         <input type="button" class="back" id="back" value="Back">
+                         <input type="button" class="next" id="next" value="Next">
                      </div>
                 </div>
             </form>

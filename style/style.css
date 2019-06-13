@@ -7,13 +7,22 @@
     color: white;
 }
 
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
 .form-container{
-      margin: 0;
-      padding: 25px 0;
-      height: 90vh; 
-      display: flex; 
-      align-items: center; 
-      justify-content: center;
+    margin: 0;
+    padding: 25px 0;
+    height: 100vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    background: url('../images/logo.png') no-repeat, url('../images/background_img.png') no-repeat;
+    background-size: 450px 145px, cover;
+    background-position: 50% 0%, 50%;
 }
 .wrapper{
     padding: 55px 0;
@@ -26,7 +35,7 @@
     justify-content: center;
     text-align: center;
     position: relative;
-    background: url('/images/logo.png') 50% -5%/450px 145px no-repeat, linear-gradient(#8d0a15, #43161d);
+    background: linear-gradient(#8d0a15, #43161d);
     border-radius: 10px;
 }
 .login{
@@ -109,7 +118,6 @@
     color: white;
     border: 2px solid rgba(0, 0, 0, .2);
     cursor: pointer;
-    box-shadow: 0px 3px 9px rgb(77, 25, 33);
 }
 
 @media screen and (max-width: 480px) {
@@ -117,18 +125,17 @@
     width: 100%;
   }
 }
-/* Css so logo can be seen when is device in landscape orientation*/
-@media screen and  (orientation: landscape) and (max-width: 890px) {
-  .wrapper{
-    height: 80%;
-    background-position: -250%  -5%;
-  }
-}
-@media screen and (min-width: 320px) and (max-width:320px) {
+@media screen and (min-width: 568px) and (max-width: 568px){
     .wrapper{
-        background-position: 50% -15%
+         padding: 75px 0;
     }
- }
+}
+/* Positioning logo for devices with 320px */
+@media screen and (min-width: 320px) and (max-width: 320px){
+    .form-container{
+        background-position: 50% -5%, 50%;
+    }
+}
 
 /* Login page with token to enter */
 .forgot .token-input{
@@ -159,12 +166,80 @@
 .forgot .button-container div button,.forgot .button-container div a, .forgot .button-container .backup-token{
     padding: 8px 25px;
 }
-.forgot .button-container div button, .forgot .button-container .backup-token{
+.forgot .button-container div input, .forgot .button-container .backup-token{
     outline:none !important;
     border-radius: 8px;
     background-color: transparent;
     color: white;
     border: 2px solid rgba(0, 0, 0, .2);
     cursor: pointer;
-    box-shadow: 0px 3px 9px rgb(77, 25, 33);
 }
+.forgot #token:focus + img{
+    top: -8px;
+    transition: .5s top;
+}
+.forgot #token:not(:focus) + img{
+    top: 7px;
+    transition: .6s top;
+}
+
+/* Button hover effect */
+.form-container #login_btn,
+.form-container #back,
+.form-container #next,
+.form-container .backup-token{
+  position: relative;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+  transition: all 0.3s ease-in-out;
+}
+.form-container #login_btn::after,
+.form-container #back::after,
+.form-container #next::after,
+.form-container .backup-token::after{
+  content: '';
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  transition: opacity 0.3s ease-in-out;
+}
+.form-container #login_btn:hover,
+.form-container #back:hover,
+.form-container #next:hover,
+.form-container .backup-token:hover{
+    transform: scale(1.2, 1.2);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

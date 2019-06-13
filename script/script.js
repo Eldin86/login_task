@@ -2,8 +2,9 @@
 let backBtn = document.getElementById("back");
 let loginDiv = document.getElementById('login');
 let forgotDiv = document.getElementById('forgot');
+let loginBtn = document.getElementById('login_btn');
 
-show_forgot.addEventListener('click', function(){
+loginBtn.addEventListener('click', function(){
     loginDiv.style.cssText = ' left: -1400px';
     forgotDiv.style.cssText = 'right: 0;'
 })
