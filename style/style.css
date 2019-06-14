@@ -37,15 +37,16 @@ body{
     position: relative;
     background: linear-gradient(#8d0a15, #43161d);
     border-radius: 10px;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.50), 0 15px 18px rgba(0,0,0,0.62);
 }
-.login{
-    transition: all 10s linear;
+
+.login-form{
     width: 500px;
     position: absolute;
     left: 0;
     transition: 1s left;
 }
-.forgot{
+.token-form{
     width: 500px;
     position: absolute;
     right: -500px;
@@ -56,6 +57,7 @@ body{
     position: relative;
     margin-bottom: 25px;
 }
+
 .input-container .input-icon{
     width: 15px;
     top: 7px;
@@ -63,7 +65,8 @@ body{
     position: absolute;
 }
 
-#username, #password{
+/* Input fields CSS */
+#username, #password, #email{
     outline: none;
     border: none;
     background-color: transparent;
@@ -74,18 +77,20 @@ body{
     border-bottom: .2px solid  rgba(255, 255, 255, .3);
 }
 
-#username::placeholder, #password::placeholder{
+/* Style placeholder and animate bottom-border on focus */ 
+#username::placeholder, #password::placeholder, #email::placeholder{
     padding-left: 5px;
     font-size: 16px;
 }
-#username:focus::placeholder, #password:focus::placeholder{
+#username:focus::placeholder, 
+#password:focus::placeholder, 
+#email:focus::placeholder{
     color: transparent;
 }
-#username:focus, #password:focus{
+#username:focus, #password:focus, #email:focus{
     border-bottom: 1px solid ;
     animation: 2s opacityBorder;
 }
-
 @keyframes opacityBorder{
     from{
         opacity: 0;
@@ -94,16 +99,24 @@ body{
         opacity: 1;
     }
 }
-#username:focus + img, #password:focus + img{
+
+/* animate icons on focus */
+#username:focus + img, 
+#password:focus + img,
+#email:focus + img{
     top: -8px;
     transition: .5s top;
 }
-#username:not(:focus) + img, #password:not(:focus) + img{
+#username:not(:focus) + img, 
+#password:not(:focus) + img,
+#email:not(:focus) + img
+{
     top: 7px;
     transition: .6s top;
 }
 
-.login .button-container{
+
+.login-form .button-container{
     display: flex;
     justify-content: space-around;
     margin: 20px 0
@@ -121,7 +134,7 @@ body{
 }
 
 @media screen and (max-width: 480px) {
-  .login, .forgot { 
+  .login-form, .token-form, .reset-form{ 
     width: 100%;
   }
 }
@@ -137,8 +150,8 @@ body{
     }
 }
 
-/* Login page with token to enter */
-.forgot .token-input{
+/* Style token form input */
+.token-form .token-input{
     outline: none;
     border: none;
     background-color: transparent;
@@ -149,30 +162,31 @@ body{
 }
 
 /* Hidden input spinner */
-.forgot .token-input[type=number]::-webkit-inner-spin-button,
-.forgot .token-input[type=number]::-webkit-outer-spin-button{
+.token-form .token-input[type=number]::-webkit-inner-spin-button,
+.token-form .token-input[type=number]::-webkit-outer-spin-button{
     -webkit-appearance: none; 
       margin: 0; 
 }
+
 /* hide spinner for mozilla browsers */
-.forgot .token-input[type=number] {
+.token-form .token-input[type=number] {
     -moz-appearance:textfield;
 }
 
-
-.forgot .token-input:focus{
+/* Style buttons and icons on the form */
+.token-form .token-input:focus{
     border-bottom: 1px solid ;
     animation: 2s opacityBorder;
 }
-.forgot .button-container div{
+.token-form .button-container div{
     display: flex;
     justify-content: space-around;
     margin: 20px 0;
 }
-.forgot .button-container div button,.forgot .button-container div a, .forgot .button-container .backup-token{
+.token-form .button-container div button,.token-form .button-container div a, .token-form .button-container .backup-token{
     padding: 8px 25px;
 }
-.forgot .button-container div input, .forgot .button-container .backup-token{
+.token-form .button-container div input, .token-form .button-container .backup-token{
     outline:none !important;
     border-radius: 8px;
     background-color: transparent;
@@ -180,11 +194,11 @@ body{
     border: 2px solid rgba(0, 0, 0, .2);
     cursor: pointer;
 }
-.forgot #token:focus + img{
+.token-form #token:focus + img{
     top: -8px;
     transition: .5s top;
 }
-.forgot #token:not(:focus) + img{
+.token-form #token:not(:focus) + img{
     top: 7px;
     transition: .6s top;
 }
@@ -219,11 +233,16 @@ body{
     transform: scale(1.2, 1.2);
 }
 
-
-
-
-
-
+/* Reset password form CSS */
+.reset-form h5, .reset-form p{
+   padding: 0 10px;
+}
+.reset-form{
+    width: 100%;
+    position: absolute;
+    left: -500px;
+    transition: 1s;
+}
 
 
 

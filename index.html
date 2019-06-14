@@ -11,7 +11,7 @@
 <body>
     <div class="form-container">
         <div class="wrapper">
-        <div class="login" id="login">
+        <div class="login-form" id="login">
            <h5>ENTER YOUR CREDIENTALS</h5>
            <form>
                <div class="input-container">
@@ -27,10 +27,10 @@
                </div>
            </form>
             <!-- In a element i added '#!' to prevent jumping when element is clicked-->   
-            <a href="#!" class="show_forgot" id="show_forgot">Forgot password?</a>
+            <a href="#!" class="forgot-password" id="forgot-password">Forgot password?</a>
         </div>
         
-        <div class="forgot" id="forgot">
+        <div class="token-form" id="token-form">
             <h5>WE SENT YOU A TEXT MESSAGE, <br> PLEASE ENTER THE TOKENS WE SENT.</h5>
             <form>
                 <div class="input-container">
@@ -48,7 +48,27 @@
                 </div>
             </form>
         </div>
-    </div>
+        
+        
+        
+        <div class="reset-form" id="reset-form">
+            <h1>PASSWORD RESET</h1>
+            <h5>Forgotten your password?<br>Enter your e-mail address, and we will send you an e-mail allowing you to reset password.</h5>
+            <form>
+                <div class="input-container">
+                    <input type="email" class="email" id="email">
+                    <img src="images/email.svg" alt="email icon" class="input-icon">
+                </div>
+                <div class="button-container">
+                    <input type="button" class="reset-password" value="Reset password">
+                </div>
+            </form>
+            <p><a href="#!">Please contact us if you have any trouble resetting your password</a></p>
+        </div>
+        
+        
+        
+       </div>
     </div>
     <script src="script/script.js"></script>
 </body>
