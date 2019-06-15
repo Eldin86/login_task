@@ -108,12 +108,10 @@ body{
 }
 #username:not(:focus) + img, 
 #password:not(:focus) + img,
-#email:not(:focus) + img
-{
+#email:not(:focus) + img{
     top: 7px;
     transition: .6s top;
 }
-
 
 .login-form .button-container{
     display: flex;
@@ -206,7 +204,8 @@ body{
 .form-container #login_btn,
 .form-container #back,
 .form-container #next,
-.form-container .backup-token{
+.form-container .backup-token,
+.form-container .reset-form input{
   position: relative;
   box-shadow: 0 1px 2px rgba(0,0,0,0.15);
   transition: all 0.3s ease-in-out;
@@ -214,7 +213,8 @@ body{
 .form-container #login_btn::after,
 .form-container #back::after,
 .form-container #next::after,
-.form-container .backup-token::after{
+.form-container .backup-token::after,
+.form-container input::after{
   content: '';
   position: absolute;
   z-index: -1;
@@ -228,7 +228,8 @@ body{
 .form-container #login_btn:hover,
 .form-container #back:hover,
 .form-container #next:hover,
-.form-container .backup-token:hover{
+.form-container .backup-token:hover,
+.form-container .reset-form .button-container input:hover{
     transform: scale(1.2, 1.2);
 }
 
@@ -242,28 +243,10 @@ body{
     left: -500px;
     transition: 1s;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+.reset-form .button-container{
+    display: flex;
+    justify-content: center;
+}
+.reset-form .button-container .reset-password{
+    margin-right: 30px;
+}
