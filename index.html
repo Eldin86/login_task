@@ -11,61 +11,74 @@
 <body>
     <div class="form-container">
         <div class="wrapper">
-        
-        <!-- Initial login form -->
-        <div class="login-form" id="login">
-           <h5>ENTER YOUR CREDIENTALS</h5>
-           <form>
-               <div class="input-container">
-                   <input type="text" placeholder="Username" id="username" autocomplete="off">
-                   <img class="input-icon username-icon" src="images/user.svg" alt="Username icon">
-               </div>
-               <div class="input-container">
-                   <input type="password" placeholder="Password" id="password">
-                   <img class="input-icon password-icon" src="images/lock.svg" alt="Password icon">
-               </div>
-               <div class="button-container">
-                   <input type="button" value="Login" id="login_btn">
-               </div>
-           </form>
-            <!-- In a element i added '#!' to prevent jumping when element is clicked-->   
-            <a href="#!" class="forgot-password" id="forgot-password">Forgot password?</a>
-        </div>
-        <!-- right slided form for tokens -->
-        <div class="token-form" id="token-form">
-            <h5>WE SENT YOU A TEXT MESSAGE, <br> PLEASE ENTER THE TOKENS WE SENT.</h5>
-            <form>
-                <div class="input-container">
-                    <input type="number" class="token-input" id="token">
-                    <img class="input-icon password-icon" src="images/auth.svg" alt="Password icon">
-                </div>
-                <div class="button-container">
-                     <p>As a last resort, you can use a backup token:</p>
-                     <input type="button" class="backup-token" value="Use Backup Token"><br>
-                     <div>
-                         <a href="#!">Cancel</a>
-                         <input type="button" class="back" id="back" value="Back">
-                         <input type="button" class="next" id="next" value="Next">
-                     </div>
-                </div>
-            </form>
-        </div>
-        <!-- Left slided forgot password form -->
-        <div class="reset-form" id="reset-form">
-            <h5>Forgotten your password?<br>Enter your e-mail address, and we will send you an e-mail allowing you to reset password.</h5>
-            <form>
-                <div class="input-container">
-                    <input type="email" class="email" id="email" placeholder="Enter your email">
-                    <img src="images/email.svg" alt="email icon" class="input-icon">
-                </div>
-                <div class="button-container">
-                    <input type="button" class="reset-password" value="Reset password">
-                    <input type="button" id="token-bck-button" value="Back">
-                </div>
-            </form>
-            
-        </div>
-        
+            <!-- Forgot password form -->
+            <div class="reset-form" id="reset-form">
+                <h5>FORGOTTEN YOUR PASSWORD?<br>ENTER YOUR E-MAIL ADDRESS, AND WE WILL SEND YOU AN E-MAIL ALLOWING YOU TO RESET PASSWORD.</h5>
+                <form>
+                    <div class="input-container">
+                        <input type="email" class="email" id="email" placeholder="Enter your email">
+                        <img src="images/email.svg" alt="email icon" class="input-icon">
+                    </div>
+                    <div class="button-container">
+                        <input type="button" class="reset-password" value="Reset password">
+                        <input type="button" id="token-bck-button" value="Back">
+                    </div>
+                </form>
+
+</div>
+            <!-- Initial login form -->
+            <div class="login-form" id="login">
+               <h5>ENTER YOUR CREDIENTALS</h5>
+               <form>
+                   <div class="input-container">
+                       <input type="text" placeholder="Username" id="username" autocomplete="off">
+                       <img class="input-icon username-icon" src="images/user.svg" alt="Username icon">
+                   </div>
+                   <div class="input-container">
+                       <input type="password" placeholder="Password" id="password">
+                       <img class="input-icon password-icon" src="images/lock.svg" alt="Password icon">
+                   </div>
+                   <div class="button-container">
+                       <input type="button" value="Login" id="login_btn">
+                   </div>
+               </form>
+                <!-- In a element i added '#!' to prevent jumping when element is clicked-->   
+                <a href="#!" class="forgot-password" id="forgot-password">Forgot password?</a>
+</div>
+            <!-- Form for tokens -->
+            <div class="token-form" id="token-form">
+                <h5>WE SENT YOU A TEXT MESSAGE, <br> PLEASE ENTER THE TOKENS WE SENT.</h5>
+                <form>
+                    <div class="input-container">
+                        <input type="number" class="token-input" id="token">
+                        <img class="input-icon password-icon" src="images/auth.svg" alt="Password icon">
+                    </div>
+                    <div class="button-container">
+                         <p>As a last resort, you can use a backup token</p>
+                         <input type="button" class="backup-token" id="backup-token" value="Use Backup Token"><br>
+                         <div>
+                             <!-- <a href="#!">Cancel</a>-->
+                             <input type="button" class="back" id="back" value="Back">
+                             <input type="button" class="next" id="next" value="Next">
+                         </div>
+                    </div>
+                </form>
+</div>
+            <!-- Form for backup tokens -->
+            <div class="backup-token-form" id="backup-token-form">
+                <h5>USE THIS FORM FOR ENTERING BACKUP TOKENS FOR LOGGING IN.<br>THESE TOKENS HAVE BEEN GENERATED FOR YOU TO PRINT AND KEEP SAFE.<br>PLEASE ENTER ONE OF THESE BACKUP TOKENS TO LOGIN TO YOU ACCOUNT</h5>
+                <form>
+                    <div class="input-container">
+                        <input type="number" class="backup-token-input" id="backup-token-input" placeholder="Enter your token">
+                        <img class="input-icon" src="images/identification.svg" alt="Password icon">
+                    </div>
+                    <div class="button-container">
+                        <!--<a href="#!">Cancel</a>-->
+                        <input type="button" id="back-token-btn" value="Back">
+                        <input type="button" id="next-token-btn" value="Next">
+                    </div>
+                </form>
+            </div>
        </div>
     </div>
     <script src="script/script.js"></script>

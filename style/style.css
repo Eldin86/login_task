@@ -1,5 +1,6 @@
 .form-container .wrapper h5{
     color: white;
+    padding: 0 10px;
 }
 .form-container .wrapper a, .wrapper p{
     text-decoration: none;
@@ -52,7 +53,7 @@ body{
     transition: 1s right;
 }
 
-.input-container{
+.form-container .input-container{
     position: relative;
     margin-bottom: 25px;
 }
@@ -65,7 +66,7 @@ body{
 }
 
 /* Input fields CSS */
-#username, #password, #email{
+#username, #password, #email, #backup-token-input{
     outline: none;
     border: none;
     background-color: transparent;
@@ -77,16 +78,17 @@ body{
 }
 
 /* Style placeholder and animate bottom-border on focus */ 
-#username::placeholder, #password::placeholder, #email::placeholder{
+#username::placeholder, #password::placeholder, #email::placeholder, #backup-token-input::placeholder{
     padding-left: 5px;
     font-size: 16px;
 }
 #username:focus::placeholder, 
 #password:focus::placeholder, 
-#email:focus::placeholder{
+#email:focus::placeholder,
+#backup-token-input:focus::placeholder{
     color: transparent;
 }
-#username:focus, #password:focus, #email:focus{
+#username:focus, #password:focus, #email:focus, #backup-token-input:focus{
     border-bottom: 1px solid ;
     animation: 2s opacityBorder;
 }
@@ -102,13 +104,16 @@ body{
 /* animate icons on focus */
 #username:focus + img, 
 #password:focus + img,
-#email:focus + img{
+#email:focus + img,
+#backup-token-input:focus + img{
     top: -8px;
     transition: .5s top;
 }
+
 #username:not(:focus) + img, 
 #password:not(:focus) + img,
-#email:not(:focus) + img{
+#email:not(:focus) + img,
+#backup-token-input:not(:focus) + img{
     top: 7px;
     transition: .6s top;
 }
@@ -147,7 +152,7 @@ body{
     }
 }
 
-/* Style token form input */
+/* Style separately token form input */
 .token-form .token-input{
     outline: none;
     border: none;
@@ -158,15 +163,19 @@ body{
     border-bottom: .2px solid  rgba(255, 255, 255, .3);
 }
 
+
 /* Hidden input spinner */
 .token-form .token-input[type=number]::-webkit-inner-spin-button,
-.token-form .token-input[type=number]::-webkit-outer-spin-button{
+.token-form .token-input[type=number]::-webkit-outer-spin-button,
+.backup-token-form .backup-token-input[type=number]::-webkit-inner-spin-button,
+.backup-token-form .backup-token-input[type=number]::-webkit-outer-spin-button{
     -webkit-appearance: none; 
-      margin: 0; 
+    margin: 0; 
 }
 
 /* hide spinner for mozilla browsers */
-.token-form .token-input[type=number] {
+.token-form .token-input[type=number],
+.backup-token-form .backup-token-input[type=number]{
     -moz-appearance:textfield;
 }
 
@@ -177,8 +186,11 @@ body{
 }
 .token-form .button-container div{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     margin: 20px 0;
+}
+.token-form .button-container div .back{
+    margin-right: 30px;
 }
 .token-form .button-container div button,.token-form .button-container div a, .token-form .button-container .backup-token{
     padding: 8px 25px;
@@ -205,7 +217,8 @@ body{
 .form-container #back,
 .form-container #next,
 .form-container .backup-token,
-.form-container .reset-form input{
+.form-container .reset-form input,
+.form-container .backup-token-form .button-container input{
   position: relative;
   box-shadow: 0 1px 2px rgba(0,0,0,0.15);
   transition: all 0.3s ease-in-out;
@@ -214,7 +227,8 @@ body{
 .form-container #back::after,
 .form-container #next::after,
 .form-container .backup-token::after,
-.form-container input::after{
+.form-container input::after,
+.form-container .backup-token-form .button-container input::after{
   content: '';
   position: absolute;
   z-index: -1;
@@ -229,14 +243,13 @@ body{
 .form-container #back:hover,
 .form-container #next:hover,
 .form-container .backup-token:hover,
-.form-container .reset-form .button-container input:hover{
-    transform: scale(1.2, 1.2);
+.form-container .reset-form .button-container input:hover,
+.form-container .backup-token-form .button-container input:hover{
+    transform: scale(1.1, 1.1);
 }
+/* End button hover CSS effect*/
 
 /* Reset password form CSS */
-.reset-form h5{
-   padding: 0 10px;
-}
 .reset-form{
     width: 100%;
     position: absolute;
@@ -248,5 +261,20 @@ body{
     justify-content: center;
 }
 .reset-form .button-container .reset-password{
+    margin-right: 30px;
+}
+
+/* Backup token form CSS */
+.backup-token-form{
+    width: 100%;
+    position: absolute;
+    right: -500px;
+    transition: 1s; 
+}
+.backup-token-form .button-container{
+    display: flex;
+    justify-content: center;
+}
+.backup-token-form .button-container #back-token-btn{
     margin-right: 30px;
 }
